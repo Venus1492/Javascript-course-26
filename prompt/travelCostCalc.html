@@ -1,0 +1,42 @@
+<script>
+  const costeHotel = numNoches => {
+    const precioNoche = 140;
+    return precioNoche * numNoches
+  }
+
+  const costeAvion = (destino, numNoches) => {
+    switch (destino.toLowerCase().trim()) {
+      case 'oviedo': precio = 15; break;
+      case 'tokyo': precio = 700; break;
+      case 'madrid': precio = 90; break;
+      case 'barcelona': precio = 90; break;
+      default: precio = 0; // Por si introduce una ciudad que no existe
+    }
+    if (numNoches > 3) {
+      precio = precio * 0.9;
+    }
+    return precio;
+  }
+
+  const costeAlquilerCoche = numNoches => {
+    const precioDia = 40;
+
+    if (numNoches >= 7) {
+      return numNoches * precioDia - 50;
+    } else if (numNoches >= 3) {
+      return numNoches * precioDia - 20;
+    } else {
+      return numNoches * precioDia;
+    }
+  }
+
+  const numNoches = Number(prompt('numero de noches'));
+  const destino = prompt('destino');
+  const resultado1 = costeHotel(numNoches);
+  const resultado2 = costeAvion(destino, numNoches);
+  const resultado3 = costeAlquilerCoche(numNoches);
+  console.log("Coste hotel: " + resultado1);
+  console.log("Coste viaje: ", resultado2);
+  console.log("Coste alquiler coche: ", resultado3);
+  console.log("Total:", resultado1 + resultado2 + resultado3);  
+</script>

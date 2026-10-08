@@ -1,0 +1,24 @@
+<script>
+  let name = prompt("Introduce your name");
+  alert(name);
+
+  while (name === false) {
+    let response = prompt("It doesn't include a number. Is this your real name? Yes / no");
+  }
+
+  const validName = response => {
+    if (response === "yes") {
+      return true
+      alert("great" + name)
+    } else if (response === "no") {
+      prompt("It doesn't include a number. Is this your real name? Yes / no");
+      return false
+    }
+    return response
+  }
+
+  validName()
+
+
+
+</script>

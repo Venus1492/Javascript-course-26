@@ -1,0 +1,18 @@
+<div id="primer" class="pp1" style="background-color:yellow; border: black solid 1px; width:200px; height:200px">
+</div>
+<div class="pp2" style="background-color:red; border: black solid 1px; width:200px; height:200px">
+</div>
+<div class="pp1" style="background-color:yellow; border: black solid 1px; width:200px; height:200px">
+</div>
+<div class="pp2" style="background-color:red; border: black solid 1px; width:200px; height:200px">
+</div>
+
+
+<script>
+  const anadeHTML = () => {
+    document.querySelector(".pp2").innerHTML = "<p>You hovered over the yellow square</p>";
+  }
+
+  //the action
+document.querySelector('#primer').addEventListener('mouseover', anadeHTML)
+</script>

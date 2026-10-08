@@ -1,0 +1,19 @@
+<input id="number">
+<p></p>
+
+<script>
+
+ 
+
+ document.querySelector("input").addEventListener("input", () => {
+    //number is input value
+     let number = document.querySelector("input").value
+    //accumulator is an empty string so we can print given phrase
+    let accum = "";
+    for (let i = 0; i < number; i++) {
+      accum = accum + "yes <br>";
+    }
+    //paint to screen
+    document.querySelector("p").innerHTML = accum
+})
+</script>

@@ -1,0 +1,71 @@
+<label for="nie">Introduce un dni sin la letra</label>
+<input type="text" id="nie">
+<br>
+<label for="output">La letra del DNI es: </label>
+<output></output>
+<br>
+<button>Calcular</button>
+
+
+
+
+<script>
+
+  //MY SOLUTION
+/*
+  const letters = "TRWAGMYFPDXBNJZSQVHLCKE"
+
+
+  const getLetter = () => {
+    //get input
+    let dni = document.querySelector('#nie').value
+    
+    //if loop to calculate and get charat index
+   if(Number(dni) && dni.length === 8){
+      
+      const calc = Number(dni) % 23;
+    
+      //letters string . charAt (calculated number)
+      const index = letters.charAt(calc);
+
+      //paint result to output
+      document.querySelector("output").value = index
+
+
+    }else{
+      alert("Enter a valid number")
+    }
+
+    
+  }
+
+//call function with button
+document.querySelector("button").addEventListener("click", getLetter )
+*/
+
+
+//BETTER SOLUTION THAT SEPERATES DOCUMENT CALLS FROM LOGIC
+//function to calculate letter from input
+const calculateLetterDni = (dni) => {
+  
+  if(dni.length !== 8 || isNaN(dni)){
+    return ""
+  }else{
+    //necesary calculation of input number
+    const rest = dni % 23;
+    //find letter from index
+    const letter = "TRWAGMYFPDXBNJZSQVHLCKE".charAt(rest);
+    return letter
+  }
+}
+
+//onclick do the following
+document.querySelector("button").addEventListener("click", () => {
+  //get input
+  const number = document.querySelector("#nie").value
+  //get letter by passing function with the parameter of input
+  const letter = calculateLetterDni(number);
+  //paint into output
+  document.querySelector("output").value = letter;
+})
+</script>

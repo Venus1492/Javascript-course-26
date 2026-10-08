@@ -1,0 +1,16 @@
+<script>
+
+  let computerDoor = Math.floor(Math.random() * 2) + 1;
+  let userDoor = Number(prompt("Which door do you choose: 1 or 2?"))
+
+
+  while (computerDoor !== userDoor) {
+    computerDoor = Math.floor(Math.random() * 2) + 1;
+    alert("Has entrado en una Mazmorra buena!")
+    userDoor = Number(prompt("Which door do you choose: 1 or 2?"));
+
+  }
+
+  alert("Mala suerte. Un dragon te come!")
+
+</script>

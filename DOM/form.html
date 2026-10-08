@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+  
+    <label for="nombre">Nombre del cliente:</label>
+    <input type="text" name="nombre" id="nombre">
+  
+    <br>
+    <br>
+  
+    <label for="material">Material de la caja:</label>
+    <select name="material" id="material">
+      <option value="plastic" selected>plastico</option>
+      <option value="carton">Carton</option>
+      <option value="metal">Metal</option>
+    </select>
+  
+    <br>
+    <br>
+  
+  
+    <p>Seleccione unas dimensiones para la caja:</p>
+    <br>
+    <br>
+    <input type="radio" name="dimensiones" value="diminutas" id="diminutas" class="boxSize">
+    <label for="diminutas">Diminutas</label>
+    <br>
+    <input type="radio" name="dimensiones" value="medianas" id="medianas" class="boxSize">
+    <label for="medianas">Medianas</label>
+    <br>
+    <input type="radio" name="dimensiones" value="grandes" id="grandes" class="boxSize">
+    <label for="grandes">Grandes</label>
+  
+    <br>
+    <br>
+  
+    <label for="commentarios">Commentarios:</label>
+    <br>
+    <textarea name="commentarios" id="commentarios" placeholder="Que sea bonita"></textarea>
+  
+    <br>
+    <br>
+  
+    <button type="button">Enviar</button>
+  
+    <output></output>
+  </form>
+  
+  <script>
+    const getData = () => { 
+      const name = document.querySelector("#nombre").value
+      console.log(name)
+      const material = document.querySelector("#material").value
+      const size = document.querySelector("[name = dimensiones]:checked").value
+      const comment = document.querySelector("#commentarios").value
+      
+      const outputSentence = `El cliente ${name} quiere una caja de ${material} de tamaño ${size}. Comentarios: ${comment}`
+      
+      document.querySelector("output").value = outputSentence
+    }
+
+
+    document.querySelector("button").addEventListener("click", getData)
+  </script>
+</body>
+</html>
+
+
+
+

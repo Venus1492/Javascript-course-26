@@ -1,0 +1,25 @@
+<script>
+  const n = Number(prompt('Introduce un número'));
+
+  const op = (prompt('Introduce an operator ( +, -, /, *)'));
+
+  const num = Number(prompt('Introduce un segundo número'));
+
+  alert(`Datos introducidos:\nNúmero 1: ${n}\nNúmero 2: ${num}\nOperador: ${op}`);
+
+  //instead of result its possible to use alert directly in each if block.
+  let result;
+  if (op === "+") {
+    result = n + num;
+  } else if (op === "-") {
+    result = n - num
+  } else if (op === "/") {
+    result = n / num
+  } else if (op === "*") {
+    result = n * num;
+  } else {
+    result = "Please enter valid operator"
+  }
+
+  alert(result)
+</script>

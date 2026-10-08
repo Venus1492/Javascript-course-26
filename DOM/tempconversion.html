@@ -1,0 +1,20 @@
+<label for="centigrade">Grados centigrados:</label>
+<input type="text" id="centigrade" placeholder="Centigrados">
+<br>
+<label for="output">Grados Farhenheit:</label>
+<output id="output"></output>
+<br>
+<button>Calcular</button>
+
+<script>
+  const calculate = () => {
+    //retrieve the value from the input field
+    const input = document.querySelector("#centigrade").value;
+    //do the conversion from centigrade to farhenheit
+    const output = (input * 9/5) + 32;
+    //display the result in the output field
+    document.querySelector("output").value = output;
+}
+  //activate the function when the button is clicked
+  document.querySelector("button").addEventListener("click", calculate);
+</script>

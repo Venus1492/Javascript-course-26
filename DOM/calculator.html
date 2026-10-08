@@ -1,0 +1,67 @@
+<input type=""text id="num1"></input>
+<br>
+<input type="text" id="num2"></input>
+<br>
+<select id="op">
+  <option value="+"> + </option>
+  <option value="-"> - </option>
+  <option value="*"> * </option>
+  <option value="/"> / </option>
+</select>
+
+<output id="out"></output>
+
+<button type="button" id="btn">Calcular</button>
+
+
+
+<script>
+/*
+  document.querySelector("button").addEventListener("click", () => {
+    const num1 = parseInt(document.querySelector("#num1").value)
+     const num2 = parseInt(document.querySelector("#num2").value)
+      const op = document.querySelector("#op").value
+    let r;
+
+    if (op == "+") {
+      r = num1 + num2
+    } else if (op == "-") {
+       r = num1 - num2
+    } else if (op == "*") {
+       r = num1 * num2
+    } else if (op == "/") {
+      r = num1 / num2
+    }
+    document.querySelector("#out").value = r
+    
+})
+*/
+ 
+
+  // 1. Función de cálculo puro (Lógica): Recibe números y devuelve el resultado
+  const calcularOperacion = (n1, n2, operacion) => {
+    if (operacion === "+") return n1 + n2;
+    if (operacion === "-") return n1 - n2;
+    if (operacion === "*") return n1 * n2;
+    if (operacion === "/") return n1 / n2;
+    return 0;
+  }
+
+  // 2. DOM process within event listener function
+  document.querySelector("#btn").addEventListener("click", () => {
+
+    // get DOM values
+    const num1 = parseInt(document.querySelector("#num1").value);
+    const num2 = parseInt(document.querySelector("#num2").value);
+    const op = document.querySelector("#op").value;
+
+    // execute calculation using function above
+    const resultado = calcularOperacion(num1, num2, op);
+
+    // show output
+    document.querySelector("#out").value = resultado;
+  })
+
+</script>
+
+

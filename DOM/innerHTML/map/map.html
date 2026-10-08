@@ -1,0 +1,22 @@
+<div
+  style="width:725px; height:483px; background: url(./img/bluemap.jpg); margin:auto; overflow:hidden; position:relative">
+  <img src="https://pablomonteserin.com/res/javascript-es6/ex/mapa/img/goldcoin.png"
+    style="width:50px;position:absolute; margin-left:577px; margin-top:75px">
+</div>
+
+
+<script>
+  const coin = document.querySelector("img");
+  console.log(coin.src)
+
+  //let horizontal = Math.random()*10
+  //let vertical = Math.Random()*10
+/*
+  accum = 0
+  for(let i = 0; i<10; i++){
+      accum += coin
+  }
+*/
+  document.querySelector("div").innerHTML = coin.src
+</script>
+

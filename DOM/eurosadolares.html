@@ -1,0 +1,15 @@
+<label for="euros">Euros</label>
+<input type="number" id="euros" placeholder="Euros">
+<label for="output">Dolares</label>
+<output></output>
+<button id="btn">Calculate</button>
+
+<script>
+  const calculate = () => {
+    const valor = document.querySelector('#euros').value;
+    document.querySelector('output').value = valor * 2;
+    
+  }
+
+  document.querySelector('button').addEventListener('click', calculate);
+</script>

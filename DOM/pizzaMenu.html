@@ -1,0 +1,79 @@
+<select id="menu">
+  <option value="margarita">Margarita 6$</option>
+  <option value="vegetal">Vegetal 7$</option>
+  <option value="carbonara">Carbonara 8$</option>
+  <option value="barbacoa" >Barbacoa 9$</option>
+</select><br><br>
+
+<fieldset>
+<legend>Select pizza size. small= -2$, large = +2$</legend>
+<input required type="radio" class="size" name="size" id="small" value="small">
+<label for="small">Small</label>
+<input type="radio" class="size" name="size" id="medium" value="medium">
+<label for="medium">Medium</label>
+<input type="radio" class="size" name="size" id="large" value="large">
+<label for="large">Large</label>
+</fieldset><br>
+
+<label for="promoCode">Enter promo code for 40% discount:</label>
+<input type="text" id="promoCode">
+<br><br>
+
+<label for="delivery">Home Delivery for 4$?</label>
+<input type="checkbox" id="delivery">
+<br><br>
+
+<output></output>
+<br>
+<button>Purchase</button>
+
+
+<script>
+
+  document.querySelector("button").addEventListener("click", () => {
+
+    const pizza = document.querySelector("#menu").value
+    
+    let price = 0;
+
+    if (pizza === "margarita") {
+      price = 6
+    } else if (pizza === "vegetal") {
+      price = 7
+    } else if (pizza === "carbonara") {
+      price = 8
+    } else if (pizza === "barbacoa") {
+      price = 9
+    }
+    
+
+    const size = document.querySelector(".size:checked").value
+    
+    let priceSize = 0
+    if (size === "small") {
+      priceSize -= 2
+    } else if (size === "large") {
+      priceSize += 2
+    }else if (size === "medium"){
+      priceSize = priceSize
+    }
+    
+    let totalCost = price + priceSize
+
+    const promo = document.querySelector("#promoCode").value
+    console.log(promo)
+    discount = 0
+    if(promo === "PIZZA40"){
+      totalCost = totalCost * 0.6
+    }
+
+    const delivery = document.querySelector("#delivery").checked
+    if(delivery){
+      totalCost += 4
+    }
+
+    document.querySelector("output").value = totalCost
+
+  })
+</script>
+

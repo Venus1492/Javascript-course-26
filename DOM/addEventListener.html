@@ -1,0 +1,11 @@
+<input type="text" />
+<button>Go!</button>
+
+<script>
+  const go = () => {
+    const info = document.querySelector("input").value;
+    document.querySelector("input").value = "Hola " + info;
+  }
+
+  document.querySelector("button").addEventListener("dblclick", go);
+</script>

@@ -1,0 +1,92 @@
+
+<label for="noches">Numero de noches:</label>
+<input type="text" name="" id="noches">
+
+
+<select name="destination" id="destination">
+  <option value="oviedo">Oviedo</option>
+  <option value="barcelona">Barcelona</option>
+  <option value="madrid">Madrid</option>
+  <option value="tokyo">Tokyo</option>
+</select>
+<button>Calcular Coste</button>
+
+<br><br>
+
+<label for="hotel">Coste Hotel:</label>
+<output id="hotel"></output>
+
+<br><br>
+
+<label for="travel">Coste Travel:</label>
+<output id="travel"></output>
+
+<br><br>
+
+<label for="car">Coste alquiler coche:</label>
+<output id="car"></output>
+
+<br><br>
+
+<label for="total">Coste Total:</label>
+<output id="total"></output>
+
+
+<script>
+  
+
+  const costeHotel = (numNoches) => {
+    const costeHotel = numNoches * 140;
+    return costeHotel;
+  }
+
+  const costeTravel = (destination, numNoches) => {
+      if (destination === "oviedo") {
+        return numNoches * 15;
+      } else if (destination === "barcelona") {
+        return 90 * numNoches;
+      } else if (destination === "madrid") {
+        return 90 * numNoches;
+      } else if (destination === "tokyo") {
+        return 700 * numNoches;
+      } 
+    }
+
+    const costeCar = (numNoches) => {
+      const costeCar = numNoches * 40;
+      if(numNoches > 7) {
+        return costeCar -50;
+      } else if(numNoches > 3) {
+        return costeCar -20
+      } else{
+        return costeCar;
+      }
+    }
+
+    const calculateCost = () => {
+        //hotelcost
+        
+        //recuperar el valor de noches
+        const numNoches = document.querySelector("#noches").value;
+        //pasar por function
+        const hotelCost = costeHotel(numNoches);
+        //pintar
+         document.querySelector("#hotel").value = hotelCost;
+
+         //travelcost
+         const destination = document.querySelector("#destination").value;
+         const travelCost = costeTravel(destination, numNoches);
+         document.querySelector("#travel").value = travelCost;
+
+         //carcost
+         const car = document.querySelector("#car").value;
+         const carCost = costeCar(numNoches);
+         document.querySelector("#car").value = carCost;
+
+         //totalCost
+         const totalCost = hotelCost + travelCost + carCost;
+          document.querySelector("#total").value = totalCost;
+    }
+     document.querySelector("button").addEventListener("click", calculateCost)
+</script>
+
